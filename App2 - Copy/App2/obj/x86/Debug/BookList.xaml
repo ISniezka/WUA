@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="App2.BookList"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App2"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <DataTemplate x:Key="ItemsDataTemplate">
+            <Grid HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="{Binding name}" Grid.Row="0"/>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Grid x:ConnectionId='1' x:Name="layoutRoot">
+        <Grid x:ConnectionId='2'  x:Name="contentGrid" Background="White" Visibility="Visible">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <ListBox x:ConnectionId='4' Grid.Row="1" Background="LightPink"  x:Name="ListDiary" ItemsSource="{Binding ItemsCollection}" ItemTemplate="{ StaticResource ItemsDataTemplate}"                                             Margin="12,0,12,12"/>
+        </Grid>
+        <ProgressRing x:ConnectionId='3' x:Name="progressGrid" Height="90" Width="90" Visibility="Collapsed" IsActive="True"/>
+    </Grid>
+
+    <Page.BottomAppBar >
+        <CommandBar Background="Purple">
+            <AppBarButton x:ConnectionId='5' Name="Back" Icon="Back" Label="Back"                    />
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
+

@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="BrecketWonsDiary.Show"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BrecketWonsDiary"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Grid.Row="1" Margin="12,0,0,0">
+            <TextBlock FontSize="36" FontWeight="Bold" Name ="nameTextBox" Text="{Binding CurrentObject.name,  Mode=TwoWay}"/>
+            <TextBlock FontSize="24" Margin="0,10,0,0" Name ="bodyTextBox" Text="{Binding CurrentObject.body, Mode=TwoWay}"/>
+        </StackPanel>
+
+        <Image>
+            <Image.Source>
+                <BitmapImage x:Name="GifImage" UriSource="Assets/nyanCat.gif"/>
+            </Image.Source>
+        </Image>
+    </Grid>
+
+    <Page.BottomAppBar >
+        <CommandBar Background="Purple">
+            <AppBarButton Name="Back" Icon="Back" Label="Back" Click="Back_Click" />
+            <AppBarButton Name="Delete" Icon="Delete" Label="Delete" Click="Delete_Click" />
+        </CommandBar>
+    </Page.BottomAppBar>
+
+</Page>

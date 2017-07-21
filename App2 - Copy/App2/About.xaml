@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="BrecketWonsDiary.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BrecketWonsDiary"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="0.5*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Grid.Row="1">
+            <TextBlock FontSize="54" x:Name="nameTextBlock" HorizontalAlignment="Center">Agnieszka Zimna</TextBlock>
+            <TextBlock FontSize="32" x:Name="mailTextBlock" HorizontalAlignment="Center">agnzim@st.amu.edu.pl</TextBlock>
+        </StackPanel>
+
+        <StackPanel Grid.Column="0" Grid.Row="2">
+            <TextBlock FontSize="32" x:Name="subjectTextBlock" HorizontalAlignment="Center">Windows Universal Apps</TextBlock>
+            <TextBlock FontSize="28" x:Name="projectTextBlock" HorizontalAlignment="Center">Projekt zaliczeniowy</TextBlock>
+        </StackPanel>
+        
+    </Grid>
+
+    <Page.BottomAppBar >
+        <CommandBar Background="LightSeaGreen">
+            <AppBarButton Name="backButton" Icon="Back" Label="Back" Click="backButton_Click" />
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
